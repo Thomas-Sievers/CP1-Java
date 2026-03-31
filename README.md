@@ -1,7 +1,7 @@
 <h1 align="center"> ERS - Employee Resource System</h1>
 <h3 align="center">
   Projeto desenvolvido pela <strong>NovaTech</strong>
-  <img src="./src/imgs/Novatech_logo.png" alt="Logo NovaTech" height="25px" style="vertical-align: middle; margin-left: 10px;">
+  <img src="./untitled/src/imgs/logo.png" alt="Logo NovaTech" height="25px" style="vertical-align: middle; margin-left: 10px;">
 </h3>
 <h3 align="center">Sistema de gerenciamento de colaboradores, recursos e alocações em Java</h3>
 
@@ -68,7 +68,7 @@ O sistema segue uma arquitetura orientada a objetos composta por:
 ##  Diagrama de Classes
 
 <p align="center">
-  <img src="./src/imgs/diagrama_de_classes.jpg" width="700">
+  <img src="./untitled/src/imgs/diagrama_de_classes.jpg" width="700">
 </p>
 
 ---
@@ -188,5 +188,5 @@ Os testes validam:
 ---
 
 ## 👥 Integrantes do Grupo
-| [<img loading="lazy" src="./src/imgs/Marco.jpg" width=115><br><sub>Marco Aurélio </sub>](https://github.com/Arriatea) | [<img loading="lazy" src="./src/imgs/Thomas.jpeg" width=115><br><sub>Thomas Sievers</sub>](https://github.com/Thomas-Sievers) |  [<img loading="lazy" src="./src/imgs/Matheus.png" width=115><br><sub>Matheus Vasques</sub>](https://github.com/maatvasques) | [<img loading="lazy" src="./src/imgs/Aurea.jpeg" width=115><br><sub>Áurea Sardinha </sub>](https://github.com/ByAurea) | [<img loading="lazy" src="./src/imgs/Bernardo.png" width=115><br><sub>Bernardo Hanashiro</sub>](https://github.com/BernardoYuji) | 
+| [<img loading="lazy" src="./untitled/src/imgs/marco.jpg" width=115><br><sub>Marco Aurélio </sub>](https://github.com/Arriatea) | [<img loading="lazy" src="./untitled/src/imgs/thomas.jpeg" width=115><br><sub>Thomas Sievers</sub>](https://github.com/Thomas-Sievers) |  [<img loading="lazy" src="./untitled/src/imgs/matheus.png" width=115><br><sub>Matheus Vasques</sub>](https://github.com/maatvasques) | [<img loading="lazy" src="./untitled/src/imgs/aurea.jpeg" width=115><br><sub>Áurea Sardinha </sub>](https://github.com/ByAurea) | [<img loading="lazy" src="./untitled/src/imgs/bernardo.png" width=115><br><sub>Bernardo Hanashiro</sub>](https://github.com/BernardoYuji) | 
 | :---: | :---: | :---: | :---: | :---: |
