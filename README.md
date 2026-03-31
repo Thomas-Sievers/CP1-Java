@@ -162,7 +162,7 @@ mvn exec:java -Dexec.mainClass="br.com.ers.model.ESR"
 
 ---
 
-## 🧪 Executar Testes
+##  Executar Testes
 
 ```
 mvn test
@@ -187,6 +187,6 @@ Os testes validam:
 
 ---
 
-## 👥 Integrantes do Grupo
+##  Integrantes do Grupo
 | [<img loading="lazy" src="./untitled/src/imgs/marco.jpg" width=115><br><sub>Marco Aurélio </sub>](https://github.com/Arriatea) | [<img loading="lazy" src="./untitled/src/imgs/thomas.jpeg" width=115><br><sub>Thomas Sievers</sub>](https://github.com/Thomas-Sievers) |  [<img loading="lazy" src="./untitled/src/imgs/matheus.png" width=115><br><sub>Matheus Vasques</sub>](https://github.com/maatvasques) | [<img loading="lazy" src="./untitled/src/imgs/aurea.jpeg" width=115><br><sub>Áurea Sardinha </sub>](https://github.com/ByAurea) | [<img loading="lazy" src="./untitled/src/imgs/bernardo.png" width=115><br><sub>Bernardo Hanashiro</sub>](https://github.com/BernardoYuji) | 
 | :---: | :---: | :---: | :---: | :---: |
