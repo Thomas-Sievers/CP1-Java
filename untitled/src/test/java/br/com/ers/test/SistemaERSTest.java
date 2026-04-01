@@ -32,23 +32,23 @@ public class SistemaERSTest {
 
     @Test
     void desligarColaboradorComSucesso() {
-        // Arrange (Preparação extra: adicionar antes de remover)
-        sistema.cadastrarColaborador(colaboradorMock);
-
-        // Act (Ação)
-        sistema.desligarColaborador(colaboradorMock);
-
-        // Assert (Verificação)
-        assertTrue(sistema.getColaboradores().isEmpty(), "A lista de colaboradores deve estar vazia após a remoção.");
-    }
-
-    @Test
-    void buscarColaboradorPorNome() {
         // Arrange
         sistema.cadastrarColaborador(colaboradorMock);
 
         // Act
-        Colaborador resultado = sistema.buscarColaboradorPorNome("  joão  "); // Testing trim() and ignoreCase()
+        sistema.desligarColaborador(colaboradorMock);
+
+        // Assert
+        assertTrue(sistema.getColaboradores().isEmpty(), "A lista de colaboradores deve estar vazia após a remoção.");
+    }
+
+    @Test
+    void buscarColaborador() {
+        // Arrange
+        sistema.cadastrarColaborador(colaboradorMock);
+
+        // Act
+        Colaborador resultado = sistema.buscarColaborador("  joão  "); // Testing trim() and ignoreCase()
 
         // Assert
         assertNotNull(resultado, "O colaborador deve ser encontrado.");
@@ -56,9 +56,20 @@ public class SistemaERSTest {
     }
 
     @Test
+    void buscarRecurso() {
+
+        sistema.adicionarRecurso(recursoMock);
+
+        Recurso resultado = sistema.buscarRecurso(1);
+
+        assertNotNull(resultado, "O recurso deve ser encontrado");
+        assertEquals(1, resultado.getId(), "O id do recurso deve bater com o mock.");
+    }
+
+    @Test
     void retornarNullAoBuscarColaboradorInexistente() {
         // Act
-        Colaborador resultado = sistema.buscarColaboradorPorNome("Maria");
+        Colaborador resultado = sistema.buscarColaborador("Maria");
 
         // Assert
         assertNull(resultado, "Deve retornar null pois a Maria não foi cadastrada.");

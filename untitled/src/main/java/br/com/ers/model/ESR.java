@@ -1,15 +1,11 @@
 package br.com.ers.model;
 
-import br.com.ers.model.Alocacao;
-import br.com.ers.model.Colaborador;
-import br.com.ers.model.Recurso;
-import br.com.ers.model.SistemaERS;
 import java.util.Date;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class ESR {
-    public static void main(String[] args) {
+    static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         SistemaERS sistema = new SistemaERS();
         int escolha = 0;
@@ -68,7 +64,7 @@ public class ESR {
                                 String nomeRemover = scanner.nextLine();
 
                                 // Search collaborator by name and remove it from the list
-                                Colaborador c = sistema.buscarColaboradorPorNome(nomeRemover);
+                                Colaborador c = sistema.buscarColaborador(nomeRemover);
                                 if (c != null) {
                                     sistema.desligarColaborador(c);
                                     System.out.println("Colaborador removido com sucesso!");
@@ -115,7 +111,7 @@ public class ESR {
                                 System.out.print("Qual o nome do recurso a remover? ");
                                 String nomeRemover = scanner.nextLine();
 
-                                Recurso r = sistema.buscarRecursoPorNome(nomeRemover);
+                                Recurso r = sistema.buscarRecurso(nomeRemover);
                                 if (r != null) {
                                     sistema.removerRecurso(r);
                                     System.out.println("Recurso removido com sucesso!");
@@ -139,13 +135,15 @@ public class ESR {
                             case 1 -> sistema.mostrarTodasLocacoes();
                             case 2 -> {
                                 System.out.println("\n---- Adicionar Alocação ----");
-                                System.out.print("Nome do Colaborador: ");
-                                String nomeColab = scanner.nextLine();
-                                Colaborador c = sistema.buscarColaboradorPorNome(nomeColab);
+                                System.out.print("Id do Colaborador: ");
+                                int idColab = scanner.nextInt();
+                                scanner.nextLine();
+                                Colaborador c = sistema.buscarColaborador(idColab);
 
-                                System.out.print("Nome do Recurso: ");
-                                String nomeRec = scanner.nextLine();
-                                Recurso r = sistema.buscarRecursoPorNome(nomeRec);
+                                System.out.print("Id do Recurso: ");
+                                int idRec = scanner.nextInt();
+                                scanner.nextLine();
+                                Recurso r = sistema.buscarRecurso(idRec);
 
                                 // Checks if the variables aren't empty
                                 if (c != null && r != null) {
@@ -155,7 +153,7 @@ public class ESR {
 
                                         // Add the "alocacao" to the list
                                         Alocacao novaAlocacao = new Alocacao(c.getId(), r.getId(), new Date(), obs);
-                                        sistema.pegarLocacao(novaAlocacao);
+                                        sistema.alocarRecurso(novaAlocacao);
                                         System.out.println("Alocação realizada com sucesso!");
                                     } else {
                                         System.out.println("O recurso não pode ser alocado (indisponível ou valor acima de R$ 5000).");

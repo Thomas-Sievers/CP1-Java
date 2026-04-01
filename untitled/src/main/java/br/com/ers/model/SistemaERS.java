@@ -48,7 +48,7 @@ public class SistemaERS {
         recursos.remove(recurso);
     }
 
-    public void pegarLocacao(Alocacao alocacao){
+    public void alocarRecurso(Alocacao alocacao){
         alocacoes.add(alocacao);
     }
 
@@ -58,8 +58,8 @@ public class SistemaERS {
 
     public void mostrarTodosColaboradores(){
         for (Colaborador colaborador : colaboradores){
-            System.out.println(String.format("ID: %d | Nome: %s | Cargo: %s | Salário: R$ %.2f | Ativo: %s",
-                    colaborador.getId(), colaborador.getNome(), colaborador.getCargo(), colaborador.getSalario(), (colaborador.isAtivo() ? "Sim" : "Não")));
+            System.out.printf("ID: %d | Nome: %s | Cargo: %s | Salário: R$ %.2f | Ativo: %s%n",
+                    colaborador.getId(), colaborador.getNome(), colaborador.getCargo(), colaborador.getSalario(), (colaborador.isAtivo() ? "Sim" : "Não"));
         }
     }
 
@@ -82,7 +82,16 @@ public class SistemaERS {
         }
     }
 
-    public Colaborador buscarColaboradorPorNome(String nome){
+    public Colaborador buscarColaborador(int id){
+        for(Colaborador c : colaboradores){
+            if(c.getId() == id){
+                return c;
+            }
+        }
+        return null;
+    }
+
+    public Colaborador buscarColaborador(String nome){
         for(Colaborador c : colaboradores){
             if(c.getNome().trim().equalsIgnoreCase(nome.trim())){
                 return c;
@@ -91,7 +100,16 @@ public class SistemaERS {
         return null;
     }
 
-    public Recurso buscarRecursoPorNome(String nome){
+    public Recurso buscarRecurso(int id){
+        for(Recurso r : recursos){
+            if(r.getId() == id){
+                return r;
+            }
+        }
+        return null;
+    }
+
+    public Recurso buscarRecurso(String nome){
         for(Recurso r : recursos){
             if(r.getNomeDoRecurso().trim().equalsIgnoreCase(nome.trim())){
                 return r;
