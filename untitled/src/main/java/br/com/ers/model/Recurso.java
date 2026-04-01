@@ -6,6 +6,7 @@ public class Recurso {
     private String categoria;
     private boolean disponivel;
     private double valorEstimado;
+    private boolean portatil;
 
     public Recurso(int id, String nomeDoRecurso, String categoria, double valorEstimado) {
         this.id = id;
@@ -13,6 +14,7 @@ public class Recurso {
         this.categoria = categoria;
         this.disponivel = true;
         this.valorEstimado = valorEstimado;
+        this.portatil = false;
     }
 
     @Override
@@ -21,7 +23,8 @@ public class Recurso {
                 "| Recurso: " + this.nomeDoRecurso +
                 "| Categoria: " + this.categoria +
                 "| Disponível: " + this.disponivel +
-                "| Valor Estimado: " + this.valorEstimado;
+                "| Valor Estimado: " + this.valorEstimado +
+                "| É portátil: " + this.portatil;
     }
 
     public int getId() {
@@ -62,6 +65,14 @@ public class Recurso {
 
     public void setValorEstimado(double valorEstimado) {
         this.valorEstimado = valorEstimado;
+    }
+
+    public boolean isPortatil() {
+        return portatil;
+    }
+
+    public void setPortatil(boolean portatil) {
+        this.portatil = portatil;
     }
 
     public boolean podeSerAlocado(){

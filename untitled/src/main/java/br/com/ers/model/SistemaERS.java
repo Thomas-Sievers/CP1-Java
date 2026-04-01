@@ -58,27 +58,19 @@ public class SistemaERS {
 
     public void mostrarTodosColaboradores(){
         for (Colaborador colaborador : colaboradores){
-            System.out.printf("ID: %d | Nome: %s | Cargo: %s | Salário: R$ %.2f | Ativo: %s%n",
-                    colaborador.getId(), colaborador.getNome(), colaborador.getCargo(), colaborador.getSalario(), (colaborador.isAtivo() ? "Sim" : "Não"));
+            System.out.println(colaborador.toString());
         }
     }
 
     public void mostrarTodosRecursos(){
         for (Recurso recurso : recursos){
-            System.out.println("id: " + recurso.getId() +
-                    "| Recurso: " + recurso.getNomeDoRecurso() +
-                    "| Categoria: " + recurso.getCategoria() +
-                    "| Disponível: " + recurso.isDisponivel() +
-                    "| Valor Estimado: " + recurso.getValorEstimado());
+            System.out.println(recurso.toString());
         }
     }
 
     public void mostrarTodasLocacoes(){
         for (Alocacao alocacao : alocacoes){
-             System.out.println("Id do Colaborador: " + alocacao.getColaboradorId() +
-             "| Id do Recurso: " + alocacao.getRecursoId() +
-             "| Data: " + alocacao.getData() +
-             "| Observação: " + alocacao.getObservacao());
+            System.out.println(alocacao.toString());
         }
     }
 

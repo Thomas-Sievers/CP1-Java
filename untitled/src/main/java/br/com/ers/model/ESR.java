@@ -53,8 +53,18 @@ public class ESR {
                                 double salario = scanner.nextDouble();
                                 scanner.nextLine();
 
+                                System.out.println("O colaborador vai trabalhar de home office? ");
+                                System.out.println("1 - Sim");
+                                System.out.println("2 - Não");
+                                int homeOffice = scanner.nextInt();
+
                                 // Add the new collaborator with the user input
                                 Colaborador novoColaborador = new Colaborador(id, nome, cargo, salario);
+
+                                if(homeOffice == 1){
+                                    novoColaborador.setHomeOffice(true);
+                                }
+
                                 sistema.cadastrarColaborador(novoColaborador);
                                 System.out.println("Colaborador cadastrado com sucesso!");
                             }
@@ -100,9 +110,19 @@ public class ESR {
 
                                 System.out.print("Valor Estimado: ");
                                 double valor = scanner.nextDouble();
+
+                                System.out.println("O recurso é portátil?");
+                                System.out.println("1 - Sim");
+                                System.out.println("2 - Não");
+                                int portatil = scanner.nextInt();
                                 scanner.nextLine();
 
                                 Recurso novoRecurso = new Recurso(id, nome, categoria, valor);
+
+                                if(portatil == 1){
+                                    novoRecurso.setPortatil(true);
+                                }
+
                                 sistema.adicionarRecurso(novoRecurso);
                                 System.out.println("Recurso adicionado com sucesso!");
                             }
@@ -147,7 +167,7 @@ public class ESR {
 
                                 // Checks if the variables aren't empty
                                 if (c != null && r != null) {
-                                    if (r.podeSerAlocado()) {
+                                    if (r.podeSerAlocado() && c.isHomeOffice() == r.isPortatil()) {
                                         System.out.print("Observação da alocação: ");
                                         String obs = scanner.nextLine();
 
@@ -156,7 +176,7 @@ public class ESR {
                                         sistema.alocarRecurso(novaAlocacao);
                                         System.out.println("Alocação realizada com sucesso!");
                                     } else {
-                                        System.out.println("O recurso não pode ser alocado (indisponível ou valor acima de R$ 5000).");
+                                        System.out.println("O recurso não pode ser alocado.");
                                     }
                                 } else {
                                     System.out.println("Colaborador ou Recurso não encontrado no sistema.");

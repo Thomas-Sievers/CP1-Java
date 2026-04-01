@@ -7,6 +7,7 @@ public class Colaborador {
     private String nome;
     private String cargo;
     private double salario;
+    private boolean homeOffice;
     private boolean ativo;
     private LocalDate dataDeAdmissao;
 
@@ -15,14 +16,15 @@ public class Colaborador {
         this.nome = nome;
         this.cargo = cargo;
         this.salario = salario;
+        this.homeOffice = false;
         this.ativo = true;
         this.dataDeAdmissao = LocalDate.now();
     }
 
     @Override
     public String toString() {
-        return String.format("ID: %d | Nome: %s | Cargo: %s | Salário: R$ %.2f | Ativo: %s",
-                id, nome, cargo, salario, (ativo ? "Sim" : "Não"));
+        return String.format("ID: %d | Nome: %s | Cargo: %s | Salário: R$ %.2f | Home Office: %s | Ativo: %s",
+                id, nome, cargo, salario, homeOffice, (ativo ? "Sim" : "Não"));
     }
 
     public int getId() {
@@ -55,6 +57,14 @@ public class Colaborador {
 
     public void setSalario(double salario) {
         this.salario = salario;
+    }
+
+    public boolean isHomeOffice() {
+        return homeOffice;
+    }
+
+    public void setHomeOffice(boolean homeOffice) {
+        this.homeOffice = homeOffice;
     }
 
     public boolean isAtivo() {

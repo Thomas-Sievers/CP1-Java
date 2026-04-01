@@ -1,18 +1,21 @@
 package br.com.ers.test;
 
 import br.com.ers.model.Colaborador;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class ColaboradorTest {
+    private Colaborador dev;
+
+    @BeforeEach
+    void setUp(){
+        dev = new Colaborador(1, "João", "Desenvolvedor Junior", 3000.0);
+    }
 
     @Test // this annotation tells Maven that this is a unit test
     void recemAdmitidoDeveSerAtivo(){
-        // Arrage
-        Colaborador dev = new Colaborador(1, "João", "Desenvolvedor Junior", 3000.0);
-
         // Act
         boolean status = dev.isAtivo();
 
@@ -21,9 +24,14 @@ public class ColaboradorTest {
     }
 
     @Test
+    void recemAdmitidoNaoDeveTerHome(){
+        boolean status = dev.isHomeOffice();
+
+        assertFalse(status, "Um colaborador deve começar sem Home Office");
+    }
+
+    @Test
     void promoverDeveAtualizarCargoESalario() {
-        // Arrange
-        Colaborador dev = new Colaborador(2, "Maria", "Desenvolvedor Junior", 3000.0);
 
         // Act
         dev.promover("Desenvolvedor Pleno", 5500.0);
